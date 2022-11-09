@@ -1,8 +1,10 @@
 package Han_study._11_08__.repository;
 
 import Han_study._11_08__.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
+
 
 public class MemoryMemberRepository implements MemberRepository{
 
@@ -31,5 +33,9 @@ public class MemoryMemberRepository implements MemberRepository{
     @Override
     public List<Member> findall() {
         return new ArrayList<>(store.values());
+    }
+
+    public void clearStore(){
+        store.clear();
     }
 }
